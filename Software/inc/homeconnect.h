@@ -30,16 +30,19 @@
 
 /* PATHS */
 
-# define INSTALL_DIR	"/opt/homeconnect"
-# define DATA_DIR	"/var/lib/homeconnect"
-# define LOG_DIR	"/var/log/homeconnect"
+# define INSTALL_DIR	        "/opt/homeconnect"
+# define DATA_DIR	            "/var/lib/homeconnect"
+# define LOG_DIR	            "/var/log/homeconnect"
 # define CONFIG_DIR	INSTALL_DIR "/config"
 # define BACKUP_DIR	INSTALL_DIR "/backups"
-# define LOG_PATH	LOG_DIR "/homeconnect.log"
-# define CONFIG_PATH	CONFIG_DIR "/homeconnect.conf"
-# define DB_PATH	DATA_DIR "/homeconnect.db"
+# define LOG_PATH LOG_DIR       "/homeconnect.log"
+# define CONFIG_PATH CONFIG_DIR "/homeconnect.conf"
+# define DB_PATH DATA_DIR       "/homeconnect.db"
 
 /* SQL */
+
+# define SQL_SAVE_CONFIG        "INSERT OR IGNORE INTO config (key, value) VALUES (?, ?)"
+# define SQL_SAVE_SCHEDULER     "INSERT OR IGNORE INTO scheduler (id, name, peripheral, active, action, hour,mon, tue, wed, thu, fri, sat, sun,mode, target_temp) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 
 /* MODBUS CONST */
 
@@ -53,6 +56,8 @@
 
 /* FUNCTIONS */
 
+int main(int argc, char **argv);
+
 /* MODBUS */
 
 /* REGISTERS */
@@ -60,6 +65,8 @@
 /* DATABASE */
 
 /* CONTROL */
+
+int ft_debugger(void);
 
 /* TOOLS */
 

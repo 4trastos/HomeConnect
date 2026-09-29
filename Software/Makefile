@@ -41,6 +41,10 @@ debug: fclean $(OBJS)
 setup:
 	@mkdir -p $(DB_DIR)
 	@sudo chown $$USER:$$USER $(DB_DIR)
+	@cp tools/reboot.sh /home/homeconnect/reboot.sh
+	@chmod +x /home/homeconnect/reboot.sh
+	@cp tools/reset.sh /home/homeconnect/reset.sh
+	@chmod +x /home/homeconnect/reset.sh
 
 clean:
 	$(RM) $(OBJS)

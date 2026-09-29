@@ -12,7 +12,6 @@ const char *SCHEMA_SQL =
     "CREATE TABLE IF NOT EXIST scheduler (\n"
     "   id              INTEGER PRIMARY KEY AUTOINCREMENT,\n"
     "   name            TEXT,\n"
-    "   peripheral      TEXT    NOT NULL,\n"
     "   active          INTEGER DEFAULT 1,\n"
     "   action          TEXT    NOT NULL,\n"
     "   hour            TEXT    NOT NULL,\n"
